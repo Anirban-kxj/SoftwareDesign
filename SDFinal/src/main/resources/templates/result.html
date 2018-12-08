@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Result</h1>
+    
+    
+	<h3 th:text="'Google Results For: ' + ${search.searchText}" ></h3>
+	<tbody>		
+	    <tr th:each="st: ${search.resultGoogle}">	    	
+	       <td>
+	       		<a id="demo" th:href="${st}">
+	       			<span th:text="${st}" ></span>	       			
+	       		</a>
+	       </td>	       
+	       <br>	        
+	    </tr>	    
+	</tbody>
+    
+    <h3 th:text="'Bing Results For: ' + ${search.searchText}" ></h3>
+    <tbody>		
+	    <tr th:each="st: ${search.resultBing}">	    	
+	       <td>
+	       		<a id="demo" th:href="${st}">
+	       			<span th:text="${st}" ></span>	       			
+	       		</a>
+	       </td>
+	       <br>	        
+	    </tr>	    
+	</tbody>
+	
+	<h3 th:text="'Yahoo Results For: ' + ${search.searchText}" ></h3>
+	<tbody>		
+	    <tr th:each="st: ${search.resultYahoo}">	    	
+	       <td>
+	       		<a id="demo" th:href="${st}">
+	       			<span th:text="${st}" ></span>	       			
+	       		</a>
+	       </td>
+	       <br>	        
+	    </tr>	    
+	</tbody>
+	<br><br><br>
+    
+    <a href="/form">Submit another Search Form</a> 
+    
+    
+</body>
+</html>
